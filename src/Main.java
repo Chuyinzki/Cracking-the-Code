@@ -1,11 +1,12 @@
 import solutions.Chapter1;
 
 import java.util.AbstractMap;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
-        String testId = "1_5";
+        String testId = "1_6";
         switch (testId) {
             case "1_1":
                 String[] strings = {"yolo", "homie", "github", "google", "jumanji", "", "f", "koala", "8iekd"};
@@ -35,6 +36,41 @@ public class Main {
                 String[] strings3 = {"aabcccccaaa", "yolo", "", " ", "     "};
                 for(String string: strings3)
                     System.out.println(String.format("\"%s\" compresses to \"%s\"", string, Chapter1.compress(string)));
+                break;
+            case "1_6":
+                String[][] pic0 = {
+                        {"01", "02"},
+                        {"03", "04"}
+                };
+                String[][] pic1 = {
+                        {"01", "02", "03"},
+                        {"04", "05", "06"},
+                        {"07", "08", "09"}
+                };
+                String[][] pic2 = {
+                        {"01", "02", "03", "04"},
+                        {"05", "06", "07", "08"},
+                        {"09", "10", "11", "12"},
+                        {"13", "14", "15", "16"}
+                };
+                String[][] pic3 = {
+                        {"01", "02", "03", "04", "05"},
+                        {"06", "07", "08", "09", "10"},
+                        {"11", "12", "13", "14", "15"},
+                        {"16", "17", "18", "19", "20"},
+                        {"21", "22", "23", "24", "25"},
+                };
+                ArrayList<String[][]> pics = new ArrayList<>();
+                pics.add(pic0);
+                pics.add(pic1);
+                pics.add(pic2);
+                pics.add(pic3);
+                for(String[][] pic : pics){
+                    System.out.println("Original: ");
+                    Chapter1.printPic(pic);
+                    System.out.println("Flipped: ");
+                    Chapter1.printPic(Chapter1.rotate90(pic));
+                }
         }
     }
 }

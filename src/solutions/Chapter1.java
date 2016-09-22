@@ -107,13 +107,13 @@ public class Chapter1 {
 
     public static String compress(String a) {
         StringBuffer buf = new StringBuffer();
-        if(a.length() == 0)
+        if (a.length() == 0)
             return a;
         char character = a.charAt(0);
         buf.append(character);
         int count = 1;
-        for(int i = 1; i < a.length(); i++){
-            if(a.charAt(i) == character)
+        for (int i = 1; i < a.length(); i++) {
+            if (a.charAt(i) == character)
                 count++;
             else {
                 buf.append(count);
@@ -124,6 +124,32 @@ public class Chapter1 {
         }
         buf.append(count);
         return buf.length() >= a.length() ? a : buf.toString();
+    }
+
+    //////////////////////////////////////////////////Question 5////////////////////////////////////////////////////////
+
+    public static void printPic(String[][] pic) {
+        for (int i = 0; i < pic.length; i++) {
+            for (int j = 0; j < pic[i].length; j++) {
+                System.out.print(pic[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    //assumes NxN matrix
+    public static String[][] rotate90(String[][] pic) {
+        int picSize = pic.length;
+        for (int i = 0; i < picSize / 2; i++)
+            for (int j = i; j < picSize - 1 - i; j++) {
+                String temp = pic[j][picSize - 1 - i];
+                pic[j][picSize - 1 - i] = pic[i][j];
+                pic[i][j] = pic[picSize - 1 - j][i];
+                pic[picSize - 1 - j][i] = pic[picSize - 1 - i][picSize - 1 - j];
+                pic[picSize - 1 - i][picSize - 1 - j] = temp;
+            }
+        return pic;
     }
 
 }
