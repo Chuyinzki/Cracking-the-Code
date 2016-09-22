@@ -102,4 +102,28 @@ public class Chapter1 {
         }
         return new String(chars);
     }
+
+    //////////////////////////////////////////////////Question 5////////////////////////////////////////////////////////
+
+    public static String compress(String a) {
+        StringBuffer buf = new StringBuffer();
+        if(a.length() == 0)
+            return a;
+        char character = a.charAt(0);
+        buf.append(character);
+        int count = 1;
+        for(int i = 1; i < a.length(); i++){
+            if(a.charAt(i) == character)
+                count++;
+            else {
+                buf.append(count);
+                count = 1;
+                character = a.charAt(i);
+                buf.append(character);
+            }
+        }
+        buf.append(count);
+        return buf.length() >= a.length() ? a : buf.toString();
+    }
+
 }

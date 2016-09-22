@@ -5,7 +5,7 @@ import java.util.AbstractMap;
 public class Main {
 
     public static void main(String[] args) {
-        String testId = "1_4";
+        String testId = "1_5";
         switch (testId) {
             case "1_1":
                 String[] strings = {"yolo", "homie", "github", "google", "jumanji", "", "f", "koala", "8iekd"};
@@ -32,7 +32,9 @@ public class Main {
                             Chapter1.removeSpaces((String)pair.getKey(), (int)pair.getValue())));
                 break;
             case "1_5":
-
+                String[] strings3 = {"aabcccccaaa", "yolo", "", " ", "     "};
+                for(String string: strings3)
+                    System.out.println(String.format("\"%s\" compresses to \"%s\"", string, Chapter1.compress(string)));
         }
     }
 }
