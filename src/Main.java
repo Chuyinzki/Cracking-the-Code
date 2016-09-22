@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        String testId = "1_6";
+        String testId = "1_7";
         switch (testId) {
             case "1_1":
                 String[] strings = {"yolo", "homie", "github", "google", "jumanji", "", "f", "koala", "8iekd"};
@@ -71,6 +71,25 @@ public class Main {
                     System.out.println("Flipped: ");
                     Chapter1.printPic(Chapter1.rotate90(pic));
                 }
+                break;
+            case "1_7":
+                int[][] ints0 = {
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+                        {1, 2, 3, 0, 5, 6, 7, 8, 9, 10},
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+                        {1, 2, 3, 4, 5, 6, 0, 8, 9, 10},
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+                };
+
+                System.out.println("Original: ");
+                Chapter1.printInts(ints0);
+                System.out.println("Zeroed: ");
+                Chapter1.printInts(Chapter1.zeroOut(ints0));
         }
     }
 }

@@ -1,5 +1,7 @@
 package solutions;
 
+import java.util.AbstractMap;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -150,6 +152,33 @@ public class Chapter1 {
                 pic[picSize - 1 - i][picSize - 1 - j] = temp;
             }
         return pic;
+    }
+
+    //////////////////////////////////////////////////Question 6////////////////////////////////////////////////////////
+
+    public static void printInts(int[][] pic) {
+        for (int i = 0; i < pic.length; i++) {
+            for (int j = 0; j < pic[i].length; j++) {
+                System.out.print(pic[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    public static int[][] zeroOut(int[][] arr){
+        ArrayList<AbstractMap.SimpleImmutableEntry> indices = new ArrayList<>();
+        for(int h = 0; h < arr.length; h++)
+            for(int w = 0; w < arr[h].length; w++)
+                if(arr[h][w] == 0)
+                    indices.add(new AbstractMap.SimpleImmutableEntry<>(h, w));
+        for(AbstractMap.SimpleImmutableEntry pair : indices){
+            for(int down = 0; down < arr.length; down ++)
+                arr[down][(Integer)pair.getValue()] = 0;
+            for(int right = 0; right < arr[0].length; right++)
+                arr[(Integer)pair.getKey()][right] = 0;
+        }
+        return arr;
     }
 
 }
