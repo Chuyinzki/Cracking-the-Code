@@ -1,4 +1,4 @@
-# cracking_the_code
+# Cracking the Code
 Solutions to cracking the code
 
 These solutions we're all initially created by hand on a whiteboard, then polished and debugged to run properly.
