@@ -38,7 +38,7 @@ public class Problem1_1 {
         map.put(""+input.charAt(0), 1);
         Integer d = 1;
         for(int i = 1; i < input.length(); i++)
-            if(d.equals(map.put(""+input.charAt(i), 1)))
+            if(d.equals(map.put(""+input.charAt(i), d)))
                 return false;
         return true;
     }
