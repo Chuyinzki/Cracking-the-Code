@@ -19,6 +19,8 @@ public class Main {
                 for (String[] stringArr : strings2) {
                     System.out.println(String.format("Strings \"%s\" and \"%s\" are%s permutations", stringArr[0], stringArr[1],
                             Problem1_3.isPermutation(stringArr[0], stringArr[1]) ? "" : " not"));
+                    System.out.println(String.format("Strings \"%s\" and \"%s\" are%s permutations", stringArr[0], stringArr[1],
+                            Problem1_3.isPermutation2(stringArr[0], stringArr[1]) ? "" : " not"));
                 }
         }
     }
