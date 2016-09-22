@@ -1,9 +1,6 @@
 package solutions;
 
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * Created by jvillegas on 9/21/16.
@@ -178,6 +175,21 @@ public class Chapter1 {
             for(int right = 0; right < arr[0].length; right++)
                 arr[(Integer)pair.getKey()][right] = 0;
         }
+        return arr;
+    }
+
+    public static int[][] zeroOut2(int[][] arr){
+        Set<AbstractMap.SimpleImmutableEntry<Integer, Integer>> set = new HashSet<>();
+        for(int h = 0; h < arr.length; h++)
+            for(int w = 0; w < arr[h].length; w++)
+                if(arr[h][w] == 0){
+                    for(int down = 0; down < arr.length; down ++)
+                        set.add(new AbstractMap.SimpleImmutableEntry<>(down, w));
+                    for(int right = 0; right < arr[0].length; right++)
+                        set.add(new AbstractMap.SimpleImmutableEntry<>(h, right));
+                }
+        for(AbstractMap.SimpleImmutableEntry toZero : set)
+            arr[(Integer)toZero.getKey()][(Integer)toZero.getValue()] = 0;
         return arr;
     }
 

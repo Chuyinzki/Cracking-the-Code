@@ -89,7 +89,7 @@ public class Main {
                 System.out.println("Original: ");
                 Chapter1.printInts(ints0);
                 System.out.println("Zeroed: ");
-                Chapter1.printInts(Chapter1.zeroOut(ints0));
+                Chapter1.printInts(Chapter1.zeroOut2(ints0));
         }
     }
 }
